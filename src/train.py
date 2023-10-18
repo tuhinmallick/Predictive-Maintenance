@@ -73,9 +73,9 @@ def model1(df: pd.DataFrame):
     report = pd.DataFrame(report).transpose()
 
     logger.info('MODEL 1')
-    logger.info("Best Model: {} ".format(best_model))
+    logger.info(f"Best Model: {best_model} ")
     logger.info(f"Classification Report:\n{report}")
-    
+
     return scores_df, best_model, best_model_name, report
 
 
@@ -102,7 +102,7 @@ def model2(df: pd.DataFrame):
             mlflow.log_metric("Precision", prec)
             mlflow.log_metric("Recall", rec)
             mlflow.log_metric("F1", f1)
-        
+
         logger.info(f'model {i} logged to mlflow')
 
     scores_df = pd.DataFrame(
@@ -121,7 +121,7 @@ def model2(df: pd.DataFrame):
     report = pd.DataFrame(report).transpose()
 
     logger.info('MODEL 2: ')
-    logger.info("Best Model: {}".format(best_model))
+    logger.info(f"Best Model: {best_model}")
     logger.info(f"Classification Report:\n{report}")
 
     return scores_df, best_model, best_model_name, report

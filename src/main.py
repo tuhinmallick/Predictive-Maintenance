@@ -31,8 +31,7 @@ warnings.filterwarnings("ignore")
 app = typer.Typer()
 
 def get_data():
-    df = pd.read_csv("data/raw/data.csv")
-    return df
+    return pd.read_csv("data/raw/data.csv")
 
 def eda(df):
     df = setup(df)

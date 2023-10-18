@@ -92,11 +92,11 @@ def get_reports_mapping(period_dir: Text) -> Dict[Text, Path]:
     """
 
     names: List[Text] = []
-    paths: List[Path] = []
-
-    for filename in os.listdir(period_dir):
-        if not filename.startswith("."):
-            paths.append(Path(f"{period_dir}/{filename}"))
+    paths: List[Path] = [
+        Path(f"{period_dir}/{filename}")
+        for filename in os.listdir(period_dir)
+        if not filename.startswith(".")
+    ]
     paths.sort()
 
     for path in paths:
