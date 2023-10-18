@@ -48,8 +48,7 @@ def get_metrics():
 
 @appl.get('/eda')
 def get_eda():
-    eda_json = get_eda_obj()
-    return eda_json
+    return get_eda_obj()
 
 
 
